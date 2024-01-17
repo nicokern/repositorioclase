@@ -1,0 +1,168 @@
+
+/*RESETEO*/
+
+*{
+    margin:0 ;
+    padding:0 ;
+    box-sizing: border-box;
+}
+
+
+/*Estilos generales*/
+
+body{
+
+   background-color: #0D0D0D ;
+    color: #FEFEFE;
+
+}
+
+/*estilos de mobile*/
+
+
+header{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+}
+
+main .img-dos, main .img-cinco{
+    display: none;
+}
+
+main div img {
+
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+main {
+    
+    height:70vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 25%);
+    gap:30px;
+    align-content: center ;
+    margin: 30px 20px;
+}
+
+footer p {
+
+   text-align: center;
+
+}
+
+
+/* Media querys*/
+
+/* IMPORTANTE la media query es para declarar
+lo que queres cambiar de lo que ya está "declarado" o "codeado"
+
+en este caso, por ejemplo, se declara la media de tablets
+con el minimo 600 px de width, y se pone todo lo que se quiere cambiar 
+pero todo lo de grids y demas no hace falta
+*/
+
+/* estilos de tablet */
+
+@media screen and (min-width:600px){
+
+    main{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,50%);
+    }
+  
+    main .img-cuatro{
+        grid-column: span 2;
+    }
+}
+
+/* estilos desktop */
+
+@media screen and (min-width:1024px){
+
+    main .img-dos, main .img-cinco{
+        display: block;
+
+    }
+
+    main{
+        background-color: aqua;
+        grid-template-columns: repeat(3, 1fr) ;
+        grid-template-rows: 40% 40% 20%;
+    }
+
+    main .img-uno, main .img-tres{
+        grid-row: span 2;
+
+    }
+
+    main .img-dos, main .img-cuatro{
+        grid-column: span 1;
+    }
+
+    main .img-cinco{
+        grid-column: span 3;
+
+    }
+} 
+
+
+/*ejemplo de areas*/
+/*
+.contenedor{
+
+    background-color: beige;
+    color: #0D0D0D;
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "section-uno section-uno section-dos"
+    "footer footer footer" ;
+    width:100%;
+    height:100;
+    margin:10px 10px 10px 10px
+    gap: 20px;
+    padding: 
+
+
+
+}
+
+.header{
+background-color: aliceblue;
+grid-area: header;
+}
+
+main{
+background-color: antiquewhite;
+    grid-area: main;
+
+}
+
+.section-uno{
+
+    grid-area: section-uno;
+
+}
+
+.section-dos{
+    background-color: bisque;
+    grid-area: section-dos;
+
+}
+
+.footer{
+    background-color: aliceblue;
+    grid-area:footer
+
+}
